@@ -14,9 +14,12 @@ const showFormWin = {
   hide: "Hide form"
 };
 
+const backgourndColor = {
+  backgroundColor: '#000'
+}
 function TextContent(prop){
   return(
-    <div className="section_text_content">
+    <div className= {prop.class} style = {prop.txt_style}>
       <h1>{prop.title}</h1>
       <p>{prop.text}</p>
     </div>
@@ -26,8 +29,8 @@ function TextContent(prop){
 function FormContent(prop){
   return(
     <div className = "first_section_form">
-      <TextContent title = {loremForm.title} text = {loremForm.text}/>
-      <button className = "section_form_btn" onClick = {prop.onClickHandler}>{prop.callForm ? showFormWin.hide : showFormWin.show}</button>
+      <TextContent  class = "section_text_content" title = {loremForm.title} text = {loremForm.text}/>
+      <button className = "section_form_btn"  onClick = {prop.onClickHandler}>{prop.callForm ? showFormWin.hide : showFormWin.show}</button>
 
     </div>
   )
